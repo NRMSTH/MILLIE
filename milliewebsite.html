@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Millie's Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://i.ibb.co/7xm9ZxW9/240-F-351479412-O2en-XLglxm-F7e9ap-Q4-UQ4-IFLk-CDn-HTFW.jpg'); /* Replace with your background image */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      position: relative;
+      height: 250px;
+      background-image: url('https://i.ibb.co/MDQzw55S/photo-2025-04-19-20-17-03.jpg'); /* Replace with your header image */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .menu {
+      margin: 30px;
+    }
+
+    .menu button {
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      background-color: #be95c4;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .menu button:hover {
+      background-color: #613169;
+    }
+
+    .section {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 10px;
+      text-align: left;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    h2 {
+      color: #ffdd57;
+    }
+
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>𝒲𝑒𝓁𝒸𝑜𝓂𝑒 𝓉𝑜 𝑀𝒾𝓁𝓁𝒾𝑒'𝓈 𝒲𝑒𝒷𝓈𝒾𝓉𝑒</h1>
+    <p>Art in motion, soul progress</p>
+  </header>
+
+  <div class="menu">
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('hobbies')">Hobbies</button>
+    <button onclick="showSection('family')">Family</button>
+    <button onclick="showSection('pet')">Pet</button>
+  </div>
+
+  <div id="about" class="section">
+    <h2>About Me</h2>
+    <p>Hello! I’m currently a student at Universiti Malaysia Perlis (UniMAP), pursuing a degree in New Media Communication. I’m a proud STPM graduate and the youngest of two siblings. I come from a unique multicultural background, being born into a family of diverse ethnicities from Sarawak. Growing up in such a rich cultural environment has shaped me into someone who values diversity, creativity, and open-mindedness. As I continue my journey in the world of media and communication, I’m excited to learn, grow, and explore new ways to tell stories that connect people.</p>
+    <img src="https://i.ibb.co/yFMDzk4c/photo-2025-04-19-21-16-15.jpg" alt="About Me Image"> <!-- Replace with your image -->
+  </div>
+
+  <div id="hobbies" class="section">
+    <h2>My Hobbies</h2>
+    <p>Music has always been a big part of my life. I enjoy playing different instruments during my free time, and it has become one of my favorite ways to express myself. I have the ability to play more than three musical instruments, and each one gives me a different kind of joy and creativity. Playing music not only helps me relax, but also challenges me to improve and explore new sounds.</p>
+    <img src="https://i.ibb.co/TMW9TyhX/photo-2025-04-19-21-19-54.jpg" alt="Hobbies Image"> <!-- Replace with your image -->
+  </div>
+
+  <div id="family" class="section">
+    <h2>My Family</h2>
+    <p>I come from a loving and harmonious family based in Sarawak. My mother is a Bidayuh and works as a teacher, while my father is an Iban and serves as a police officer. I have one sister who is also a student at UniMAP. Growing up in a multiracial family has given me the ability to speak multiple languages and appreciate different cultures. Our home is always filled with warmth, understanding, and strong family values.</p>
+    <img src="https://i.ibb.co/Mk8x2GsQ/photo-2025-04-20-00-39-21.jpg" alt="Study Image"> <!-- Replace with your image -->
+  </div>
+
+  <div id="pet" class="section">
+    <h2>My Cat</h2>
+    <p>Cincong is my beloved cat and holds a special place in my heart. He came into my life during a time when my mental health wasn’t at its best. Since then, he has taught me the true meaning of love and the importance of appreciating God’s creations. His simple, calming colors bring me a sense of peace and comfort. Having him by my side has been a beautiful and healing experience.</p>
+    <img src="https://i.ibb.co/hFwqwhv8/photo-2025-04-19-21-22-15.jpg" alt="My Cat"> <!-- Replace with your image -->
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://nrmsth.github.io/MILLIE/doriwirawan_7425583567784168710.mp3" type="audio/mpeg"> <!-- Replace with your music file -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Show selected section only
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    // Try to autoplay music on page load
+    window.addEventListener('load', function () {
+      const music = document.getElementById('bg-music');
+      const playMusic = () => {
+        music.play().catch(() => {
+          document.body.addEventListener('click', () => music.play(), { once: true });
+        });
+      };
+      playMusic();
+    });
+  </script>
+  <footer style="text-align: center; padding: 20px; background-color: rgba(0, 0, 0, 0.5); color: #fff; position: relative; margin-top: 40px;">
+    <p>&copy; 2025 Aleeya Millie Maisara. SMM10803.</p>
+  </footer>
+</body>
+</html>
